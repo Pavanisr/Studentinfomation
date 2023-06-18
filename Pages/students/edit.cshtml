@@ -1,0 +1,62 @@
+﻿@page
+@model Studentinfomation.Pages.students.editModel
+@{
+}
+
+<br />
+<h1>Edit student</h1>
+
+
+@if (Model.errorMessage.Length > 0)
+{
+        <div class='alert alert-warning alert-dismissible fade-show'>
+            <strong>@Model.errorMessage</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+        </div>
+}
+
+<form method="POST">
+    <input type="hidden" name="student_id" value="@Model.studentinfo.student_id"/>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="name" value="@Model.studentinfo.name" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">city</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="city" value="@Model.studentinfo.city" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Course Id</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="course_id" value="@Model.studentinfo.course_id" />
+        </div>
+    </div>
+
+    @if (Model.sucessMessage.Length > 0)
+    {
+            <div class="row mb-3">
+                <div class="col-mb-9">
+                    <div class='alert alert-warning alert-dismissible fade-show'>
+                        <strong>@Model.errorMessage</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+                    </div>
+                </div>
+            </div>
+    }
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button  class="btn btn-outline-primary" href="/" role="button">Cancel</button>
+        </div>
+    </div>
+</form>
+

@@ -1,0 +1,36 @@
+﻿@page
+@model Studentinfomation.Pages.courses.IndexModel
+@{
+}
+
+<br>
+<h1>List of courses</h1>
+<a class="btn btn-primary btn-sm" href="/courses/create">New course</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>course_id</th>
+            <th>name</th>
+            <th>lecturer_name</th>
+            
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listcourse)
+        {
+            <tr>
+                <td>@item.course_id</td>
+                <td>@item.name</td>
+                <td>@item.lecture_name</td>
+                
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/courses/Edit?course_id=@item.course_id">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="/courses/Delete?course_id=@item.course_id">Delete</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
